@@ -2,7 +2,6 @@ const poke_container = document.getElementById('poke_container')
 
 const pokemon_number = 150
 
-fetchPokemon();
 
 const fetchPokemon = async () => {
   for(let i=0; i <= pokemon_number; i++) {
@@ -18,6 +17,17 @@ const getPokemon = async id => {
   createPokemonCard(pokemon)
 }
 
+fetchPokemon();
+
 function createPokemonCard(pokemon) {
-  const pokemonEl = document.createElement()
+  const pokemonEl = document.createElement('div')
+  pokemonEl.classList.add('pokemon')
+
+  const pokeInnerHtml = `
+    ${pokemon.id}
+  `;
+
+  pokemonEl.innerHTML = pokeInnerHtml;
+
+  poke_container.appendChild(pokemonEl)
 }
