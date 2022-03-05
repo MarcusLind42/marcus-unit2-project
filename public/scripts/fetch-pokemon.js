@@ -3,7 +3,7 @@ const poke_container = document.getElementById('poke_container')
 const pokemon_number = 150
 
 
-const fetchPokemon = async () => {
+const grabPokemon = async () => {
   for(let i = 1; i <= pokemon_number; i++) {
     await getPokemon(i)
   }
