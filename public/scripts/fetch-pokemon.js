@@ -29,4 +29,3 @@ function createPokemonCard(pokemon) {
   
   poke_container.appendChild(pokemonEl)
 }
-fetchPokemon();
