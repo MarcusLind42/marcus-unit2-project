@@ -5,7 +5,7 @@ function index(req, res, next) {
   .then(profiles => {
     res.render('profiles/index', {
       profiles: profiles,
-      name: req.query.name,
+      title: "All Pokemon Trainers"
     })
   })
   .catch(err => {
