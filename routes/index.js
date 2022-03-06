@@ -26,13 +26,13 @@ router.get('/add', async function (req, res) {
 
   const responseDescription = await fetch(`http://pokeapi.co/api/v2/pokemon-species/${req.query.pokemon}`)
 
-  const data2 = await response.json()
+  const data2 = await responseDescription.json()
 
   const pokemonText = data2
 
-  const pokemonDescription = pokemonText.flavor_text_entries[0]
+  const pokemonDescription = pokemonText.flavor_text_entries[2].flavor_text
 
-  console.log(responseDescription);
+  console.log(pokemonDescription);
   
   Pokemon.create({
     name: pokemonName,
@@ -41,6 +41,7 @@ router.get('/add', async function (req, res) {
     sprite: pokemonSprite,
     type1: pokemonType1,
     type2: pokemonType2,
+    description: pokemonDescription
   })
   
   res.redirect('/')
