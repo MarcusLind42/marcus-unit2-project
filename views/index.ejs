@@ -11,7 +11,9 @@
       />
     </div>
   <% } %>
-
+  <% pokemon.forEach(function(pokemon) { %>
+    <h2><%= pokemon.name %> </h2>
+    <% }) %> 
 </main>
 
 <%- include('./partials/footer') %>
