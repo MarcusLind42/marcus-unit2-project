@@ -11,9 +11,16 @@
       />
     </div>
   <% } %>
-  <% pokemon.forEach(function(pokemon) { %>
-    <h2><%= pokemon.name %> </h2>
-    <% }) %> 
+    <form action="/add" 
+    method="GET"
+    >
+    <input 
+    type="text" 
+    name="pokemon" >
+
+    <button>Enter Pokemon</button>
+
+    </form>
 </main>
 
 <%- include('./partials/footer') %>
