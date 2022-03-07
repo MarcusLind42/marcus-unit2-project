@@ -16,12 +16,15 @@ router.get('/add', async function (req, res) {
   
   const pokemon = data
   
+  const pokemonId = pokemon.id
   const pokemonName = pokemon.name
   const pokemonHeight = pokemon.height
   const pokemonWeight = pokemon.weight 
   const pokemonSprite = pokemon.sprites.front_default
+  const pokemonSpriteShiny = pokemon.sprites.front_shiny
   const pokemonType1 = pokemon.types[0].type.name
-  const pokemonType2 = pokemon.types[1].type.name
+
+  console.log(pokemonId);
 
 
   const responseDescription = await fetch(`http://pokeapi.co/api/v2/pokemon-species/${req.query.pokemon}`)
@@ -31,16 +34,15 @@ router.get('/add', async function (req, res) {
   const pokemonText = data2
 
   const pokemonDescription = pokemonText.flavor_text_entries[2].flavor_text
-
-  console.log(pokemonDescription);
   
   Pokemon.create({
+    pokedexId: pokemonId,
     name: pokemonName,
     height: pokemonHeight,
     weight: pokemonWeight,
     sprite: pokemonSprite,
+    sprite_shiny: pokemonSpriteShiny,
     type1: pokemonType1,
-    type2: pokemonType2,
     description: pokemonDescription
   })
   
