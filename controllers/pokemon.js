@@ -1,11 +1,19 @@
 import { Pokemon } from "../models/pokemon.js"
 import fetch from 'node-fetch' 
 
-router.get('/', (req, res) => {
-  fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
-  .then(res => res.json)
-  .then(allPokemon => console.log(allPokemon))
-})
+function index(req, res) {
+  Taco.find({})
+    .then(tacos => {
+      res.render('tacos/index', {
+        tacos,
+        title: 'All Tacos'
+      })
+    }) 
+    .catch(err => {
+      console.log(err)
+      res.redirect('/tacos')
+    })
+}
 
 export {
   pokedex

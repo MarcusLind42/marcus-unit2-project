@@ -3,4 +3,4 @@ import * as pokemonCtrl from "../controllers/pokemon.js"
 import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
-router.get('/', pokemonCtrl.pokedexList)
+router.get('/', pokemonCtrl.index)

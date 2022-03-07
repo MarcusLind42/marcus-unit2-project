@@ -6,7 +6,7 @@ const pokemonSchema = new Schema ({
   pokedexId: Number,
   name: String,
   height: Number,
-  weight: Number,
+  weight: Number, 
   // need front_default
   sprite: String,
   sprite_shiny: String, 
