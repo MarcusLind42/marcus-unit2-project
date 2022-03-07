@@ -16,9 +16,20 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  
+  Pokemon.findById(req.params.id)
+  .then(pokemon => {
+    res.render('pokemon/show', {
+      pokemon,
+      title: "pokemon"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/pokemon')
+  })
 }
 
 export {
-  index
+  index,
+  show
 }
