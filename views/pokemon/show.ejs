@@ -1,0 +1,29 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <section>
+    <ul>
+        <li>
+          <a href="/pokemon/<%= pokemon._id %>"> <img src="<%= pokemon.sprite %>"></a><br>
+          No. <%= pokemon.pokedexId %> 
+          Name: <%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %>
+          <br>
+          <% if (pokemon.type1.length > 1) { %>
+            <%= pokemon.type1[0].toUpperCase() %><%= ` ` %> 
+            <%= pokemon.type1[1].toUpperCase() %>  
+          <% } else { %>
+            <%= pokemon.type1[0].toUpperCase() %>
+          <% } %> 
+          
+            <br>
+          Height: <%= pokemon.height/10 %> m
+          Weight: <%= pokemon.weight/10 %> kg 
+          <br>
+          <%= pokemon.description %> 
+        </li>
+    </ul>
+  </section>  
+</section>
+
+<%- include('../partials/footer') %>

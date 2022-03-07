@@ -8,10 +8,9 @@
   <ul>
     <% pokemon.forEach(pokemon => { %>
       <li>
-        <img src="<%= pokemon.sprite %>"><br>
+        <a href="/pokemon/<%= pokemon._id %>"> <img src="<%= pokemon.sprite %>"></a><br>
         No. <%= pokemon.pokedexId %> 
         Name: <%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %>
-        
         <br>
         <% if (pokemon.type1.length > 1) { %>
           <%= pokemon.type1[0].toUpperCase() %><%= ` ` %> 
