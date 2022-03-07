@@ -2,10 +2,11 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <section>
+<a href="/"   <h3>Back to PokeDex</h3>
+
     <ul>
         <li>
-          <a href="/pokemon/<%= pokemon._id %>"> <img src="<%= pokemon.sprite %>"></a><br>
+          <img src="<%= pokemon.sprite %>"><br>
           No. <%= pokemon.pokedexId %> 
           Name: <%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %>
           <br>
@@ -23,7 +24,7 @@
           <%= pokemon.description %> 
         </li>
     </ul>
-  </section>  
+    
 </section>
 
 <%- include('../partials/footer') %>
