@@ -6,10 +6,9 @@
   
 <section>
   <ul>
-    <% pokemon.forEach(pokemon => { %>
+    <% pokmons.forEach(pokemon => { %>
       <li>
-        🌮 
-        <a href="/pokemon/<%= pokemon._id %>">PokeDex No.<%= pokemon.pokedexId %></a> 
+        <a href="/pokemons/<%= pokemon._id %>">PokeDex No.<%= pokemon.pokedexId %></a> 
             Name:<%= pokemon.name %>
       </li>
     <% }) %>
