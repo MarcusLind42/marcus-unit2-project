@@ -10,10 +10,20 @@
       <li>
         <img src="<%= pokemon.sprite %>"><br>
         No. <%= pokemon.pokedexId %> 
-        Name: <%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %><br>
-        <%= pokemon.type1.join(', ') %> <br>
+        Name: <%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %>
+        
+        <br>
+        <% if (pokemon.type1.length > 1) { %>
+          <%= pokemon.type1[0].toUpperCase() %><%= ` ` %> 
+          <%= pokemon.type1[1].toUpperCase() %>  
+        <% } else { %>
+          <li><%= pokemon.type1[0].toUpperCase() %></li> 
+        <% } %> 
+        
+          <br>
         Height: <%= pokemon.height/10 %> m
-        Weight: <%= pokemon.weight/10 %> kg<br>
+        Weight: <%= pokemon.weight/10 %> kg 
+        <br>
         <%= pokemon.description %> 
       </li>
     <% }) %>
