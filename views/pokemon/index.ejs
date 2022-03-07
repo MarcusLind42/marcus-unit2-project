@@ -8,8 +8,11 @@
   <ul>
     <% pokemon.forEach(pokemon => { %>
       <li>
-        <a href="/pokemons/<%= pokemon._id %>">PokeDex No.<%= pokemon.pokedexId %></a> 
-            Name:<%= pokemon.name %>
+        <img src="pokemon.sprite">
+        No.<%= pokemon.pokedexId %> 
+        Name:<%= pokemon.name %><br>
+        Height:<%= pokemon.height %>
+        Weight:<%= pokemon.weight %><br>
       </li>
     <% }) %>
   </ul>
