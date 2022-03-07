@@ -1,12 +1,12 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<!-- <main> -->
+<main>
   <h1>PokeDex</h1>
   
 <section>
   <ul>
-    <% pokmons.forEach(pokemon => { %>
+    <% pokemon.forEach(pokemon => { %>
       <li>
         <a href="/pokemons/<%= pokemon._id %>">PokeDex No.<%= pokemon.pokedexId %></a> 
             Name:<%= pokemon.name %>
@@ -15,6 +15,6 @@
   </ul>
 </section>  
 
-<!-- </main> -->
+</main>
 
 <%- include('../partials/footer') %>

@@ -5,6 +5,7 @@ function index(req, res) {
   Pokemon.find({})
     .then(pokemon => {
       res.render('pokemon/index', {
+        pokemon,
         title: 'All Pokemon'
       })
     }) 
