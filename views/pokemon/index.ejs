@@ -8,11 +8,12 @@
   <ul>
     <% pokemon.forEach(pokemon => { %>
       <li>
-        <img src="pokemon.sprite">
+        <img src="<%= pokemon.sprite %>"><br>
         No.<%= pokemon.pokedexId %> 
         Name:<%= pokemon.name %><br>
         Height:<%= pokemon.height %>
         Weight:<%= pokemon.weight %><br>
+        Info: <%= pokemon.description %> 
       </li>
     <% }) %>
   </ul>
