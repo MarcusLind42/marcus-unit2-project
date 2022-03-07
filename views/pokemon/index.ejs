@@ -9,11 +9,12 @@
     <% pokemon.forEach(pokemon => { %>
       <li>
         <img src="<%= pokemon.sprite %>"><br>
-        No.<%= pokemon.pokedexId %> 
-        Name:<%= (pokemon.name[0].toUpperCase() + pokemon.name.substring(1)) %><br>
-        Height:<%= pokemon.height %>
-        Weight:<%= pokemon.weight %><br>
-        Info: <%= pokemon.description %> 
+        No. <%= pokemon.pokedexId %> 
+        Name: <%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %><br>
+        <%= pokemon.type1.join(', ') %> <br>
+        Height: <%= pokemon.height/10 %> m
+        Weight: <%= pokemon.weight/10 %> kg<br>
+        <%= pokemon.description %> 
       </li>
     <% }) %>
   </ul>
