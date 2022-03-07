@@ -4,3 +4,7 @@ import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
 router.get('/', pokemonCtrl.index)
+
+export {
+  router
+}

@@ -2,19 +2,18 @@ import { Pokemon } from "../models/pokemon.js"
 import fetch from 'node-fetch' 
 
 function index(req, res) {
-  Taco.find({})
-    .then(tacos => {
-      res.render('tacos/index', {
-        tacos,
-        title: 'All Tacos'
+  Pokemon.find({})
+    .then(pokemon => {
+      res.render('pokemon/index', {
+        title: 'All Pokemon'
       })
     }) 
     .catch(err => {
       console.log(err)
-      res.redirect('/tacos')
+      res.redirect('/pokemon')
     })
 }
 
 export {
-  pokedex
+  index
 }

@@ -1,18 +1,21 @@
-<%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
 
-<main>
-  <h1>Hello POKEDEX, <%= user ? user.profile.name : "Pokemon Trainer!" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
+<!-- <main> -->
   <h1>PokeDex</h1>
   
-</main>
+<section>
+  <ul>
+    <% pokemon.forEach(pokemon => { %>
+      <li>
+        🌮 
+        <a href="/pokemon/<%= pokemon._id %>">PokeDex No.<%= pokemon.pokedexId %></a> 
+            Name:<%= pokemon.name %>
+      </li>
+    <% }) %>
+  </ul>
+</section>  
 
-<%- include('./partials/footer') %>
+<!-- </main> -->
+
+<%- include('../partials/footer') %>
