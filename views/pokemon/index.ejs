@@ -10,7 +10,7 @@
       <li>
         <img src="<%= pokemon.sprite %>"><br>
         No.<%= pokemon.pokedexId %> 
-        Name:<%= pokemon.name %><br>
+        Name:<%= (pokemon.name[0].toUpperCase() + pokemon.name.substring(1)) %><br>
         Height:<%= pokemon.height %>
         Weight:<%= pokemon.weight %><br>
         Info: <%= pokemon.description %> 
