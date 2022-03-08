@@ -32,7 +32,24 @@ function show(req, res) {
   })
 }
 
+function addToTeam(req,res) {
+  Pr.findById(req.params.id)
+  console.log(req.params.id)
+  .then(pokemonId => {
+    res.render('/pokemon', {
+      profiles,
+      pokemonId
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/pokemon');
+  })
+  
+}
+
 export {
   index,
-  show
+  show,
+  addToTeam,
 }
