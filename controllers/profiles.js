@@ -1,4 +1,5 @@
 import { Profile } from '../models/profile.js'
+import { Pokemon } from '../models/pokemon.js'
 
 function index(req, res, next) {
   Profile.find({})
@@ -33,11 +34,13 @@ function show(req, res) {
 }
 
 function addToTeam(req,res) {
+  Pokemon.findById(req.params.id)
+  .then
 
 }
 
 export {
   index,
   show,
-  addToTeam
+  addToTeam,
 }

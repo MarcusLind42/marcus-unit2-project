@@ -6,7 +6,7 @@ const router = Router();
 
 router.get('/', isLoggedIn, profilesCtrl.index)
 router.get('/:id', isLoggedIn, profilesCtrl.show)
-router.post("/:id/profiles/:id", isLoggedIn,profilesCtrl.addToTeam)
+router.post("/pokemon/:id/profiles/:id", isLoggedIn,profilesCtrl.addToTeam)
 
 export {
   router
