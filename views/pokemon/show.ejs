@@ -2,10 +2,10 @@
 <%- include('../partials/nav') %>
 
 <section>
-<a href="/"   <h3>Back to PokeDex</h3>
+<a href="/pokemon"><h3>Back to PokeDex</h3></a>
 
     <ul>
-        <li>
+      <li>
           <img src="<%= pokemon.sprite %>"><br>
           No. <%= pokemon.pokedexId %> 
           Name: <%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %>
@@ -16,8 +16,7 @@
           <% } else { %>
             <%= pokemon.type1[0].toUpperCase() %>
           <% } %> 
-          
-            <br>
+          <br>
           Height: <%= pokemon.height/10 %> m
           Weight: <%= pokemon.weight/10 %> kg 
           <br>
