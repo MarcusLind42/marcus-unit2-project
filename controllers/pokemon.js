@@ -6,7 +6,6 @@ function index(req, res) {
   Pokemon.find({})
     .then(pokemon => {
       res.render('pokemon/index', {
-        profiles,
         pokemon,
         title: 'All Pokemon'
       })
@@ -21,7 +20,6 @@ function show(req, res) {
   Pokemon.findById(req.params.id)
   .then(pokemon => {
     res.render('pokemon/show', {
-      profiles,
       pokemon,
       title: "pokemon"
     })
@@ -33,19 +31,22 @@ function show(req, res) {
 }
 
 function addToTeam(req,res) {
-  Pr.findById(req.params.id)
-  console.log(req.params.id)
-  .then(pokemonId => {
-    res.render('/pokemon', {
-      profiles,
-      pokemonId
+  Profile.findById(req.params.id)
+  .then((profile) => {
+    Profile.findById(req.user.profile._id)
+    .then(self => {
+      const isSelf = self._id.equals(profile._id)
+      res.render("/pokemon", {
+        profile,
+        self,
+        isSelf
+      })
     })
   })
-  .catch(err => {
+  .catch((err) => {
     console.log(err)
     res.redirect('/pokemon');
   })
-  
 }
 
 export {
