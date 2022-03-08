@@ -11,7 +11,7 @@
         <a href="/pokemon/<%= pokemon._id %>"> <img src="<%= pokemon.sprite %>"></a><br>
         No. <%= pokemon.pokedexId %> 
         Name: <%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %>
-        <form action="/pokemon/<%= pokemon._id %>/profiles/<%= profile._id %> "method="POST">
+        <form action="/pokemon/<%= pokemon._id %>/profiles/<%= profile._id %>"method="POST">
           <button class="btn" type="submit">Add to Team</button>
         </form>
         <br>
