@@ -1,6 +1,6 @@
 import { Pokemon } from "../models/pokemon.js"
 import { Profile } from "../models/profile.js"
-
+import { PokemonTeam } from '../models/pokemon-team.js'
 
 function index(req, res) {
   Pokemon.find({})
@@ -28,13 +28,35 @@ function show(req, res) {
     console.log(err)
     res.redirect('/pokemon')
   })
-
-//
 }
 
+function addToTeam(req, res) {
+  Pokemon.findById(req.params.id)
+    .then(pokemon => {
+      PokemonTeam.create({name: req.params.id, trainer: req.user.profile._id})
+        .then(pokemonTeam => {
+          pokemonTeam.names.push(pokemon);
+          pokemonTeam.save()
+            .then(pokemon => {
+              Profile.findById(req.user.profile._id)
+                .then(profile => {
+                  profile.team.push(pokemon)
+                  profile.save()
+                    .then(function() {
+                      res.redirect('/pokemon')
+                    })
+                })
+            })
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    })
+}
 
 
 export {
   index,
   show,
+  addToTeam
 }

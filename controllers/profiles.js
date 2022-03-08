@@ -17,7 +17,9 @@ function index(req, res, next) {
 
 function show(req, res) {
   Profile.findById(req.params.id)
+  .populate('team')
   .then((profile) => {
+    console.log(profile);
     Profile.findById(req.user.profile._id)
     .then(self => {
       const isSelf = self._id.equals(profile._id)
@@ -33,25 +35,9 @@ function show(req, res) {
   })
 }
 
-function addToTeam(req,res) {
-  Pokemon.findById(req.params.id)
-  Profile.findById(req.user.profile)
-  .then(pokemon, profile => {
-    console.log(req.params.id)
-    console.log(req.user.profile);
-    res.redirect('/', {
-      pokemon,
-      profile,
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect(`/`)
-  })
-}
 
 export {
   index,
   show,
-  addToTeam,
+
 }

@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema
 
 const pokemonTeamSchema = new Schema ({
-  names: [String],
+  names: [{type: Schema.Types.ObjectId, ref: "Pokemon"}],
+  trainer: {type: Schema.Types.ObjectId, ref: "Profile"}
 }, {
   timestamps: true
 })
