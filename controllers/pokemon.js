@@ -1,6 +1,6 @@
 import { Pokemon } from "../models/pokemon.js"
 import { Profile } from "../models/profile.js"
-import fetch from 'node-fetch' 
+
 
 function index(req, res) {
   Pokemon.find({})
