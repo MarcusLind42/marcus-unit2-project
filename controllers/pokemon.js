@@ -28,6 +28,8 @@ function show(req, res) {
     console.log(err)
     res.redirect('/pokemon')
   })
+
+//
 }
 
 
