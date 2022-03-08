@@ -12,7 +12,7 @@
         No. <%= pokemon.pokedexId %> 
         Name: <%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %>
         <form action="/pokemon/<%= pokemon._id %>/profiles/<%= profile._id %> "method="POST">
-          <button class="btn" type="submit">Add to </button>
+          <button class="btn" type="submit">Add to Team</button>
         </form>
         <br>
         <% if (pokemon.type1.length > 1) { %>
