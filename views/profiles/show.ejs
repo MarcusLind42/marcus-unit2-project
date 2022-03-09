@@ -12,16 +12,12 @@
     </div>
   <% } %>  
   <h1>It's <%= isSelf ? 'you' : profile.name %>!</h1>
-  <% if ((isSelf) && (profile.team === null)) { %> 
+  <% if ((isSelf) && (profile.team.length === 0)) { %> 
     <form action="/profiles/<%= profile._id %>/createteam" method="POST">
       <button type="submit">Create Team</button>
     </form>
-  <% } %>
-
-<h1> <%= profile.team %> </h1>
-
-<% if (profile.team !== null) { %> 
-<h2> team is not null </h2>
+  <% } else { %>
+    <h1> <%= profile.team %> </h1>
   <% } %> 
 
 <%- include('../partials/footer') %>
