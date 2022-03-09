@@ -37,7 +37,22 @@ function show(req, res) {
   })
 }
 
+function createTeam(req, res) {
+  PokemonTeam.create({trainer: req.user.profile._id})
+    .then(pokemonTeam => {
+      pokemonTeam.save()
+        .then(function() {
+          res.redirect('/profiles/index')
+        })
+    })
+    .catch((err) => {
+      console.log(err)
+      res.redirect("/")
+    })
+}
+
 export {
   index,
   show,
+  createTeam,
 }
