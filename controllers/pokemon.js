@@ -35,12 +35,13 @@ function addToTeam(req, res) {
     .then(pokemon => {
       PokemonTeam.findOne({trainer: req.user.profile._id})
         .then(pokemonTeam => {
-          console.log('Yo', pokemonTeam);
+          console.log("Yo-dle", pokemon);
           pokemonTeam.names.push(pokemon);
           pokemonTeam.save()
             .then(pokemon => {
               Profile.findById(req.user.profile._id)
                 .then(profile => {
+                  console.log('Yo', pokemon);
                   profile.team.push(pokemon)
                   profile.save()
                     .then(function() {

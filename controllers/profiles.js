@@ -51,6 +51,7 @@ function createTeam(req, res) {
     })
 }
 
+
 export {
   index,
   show,
