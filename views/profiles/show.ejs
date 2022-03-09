@@ -12,7 +12,7 @@
     </div>
   <% } %>  
   <h1>It's <%= isSelf ? 'you' : profile.name %>!</h1>
-  <% if ((isSelf) && (profile._id === pokemonteam.trainer)) { %> 
+  <% if ((isSelf) && (profile._id !== null)) { %> 
     <form action="/profiles/<%= profile._id %>/createteam" method="POST">
       <button type="submit">Create Team</button>
     </form>
