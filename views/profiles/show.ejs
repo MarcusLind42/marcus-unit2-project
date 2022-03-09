@@ -12,12 +12,12 @@
     </div>
   <% } %>  
   <h1>It's <%= isSelf ? 'you' : profile.name %>!</h1>
-  <% if ((isSelf) && (profile.team.length === 0)) { %> 
+  <% if (profile.team.length === 0) { %>
+    <h2>Already got team </h2>
+  <% } else { %>
     <form action="/profiles/<%= profile._id %>/createteam" method="POST">
       <button type="submit">Create Team</button>
     </form>
-  <% } else { %>
-    <h2>yo</h2>
     <% } %> 
     
 
