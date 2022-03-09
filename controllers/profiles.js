@@ -26,6 +26,7 @@ function show(req, res) {
       const isSelf = self._id.equals(profile._id)
       res.render("profiles/show", {
         title: `Pokemon Trainer ${profile.name}`,
+        isSelf,
         profile,
       })
     })
@@ -36,10 +37,7 @@ function show(req, res) {
   })
 }
 
-
-
 export {
   index,
   show,
-
 }
