@@ -33,8 +33,9 @@ function show(req, res) {
 function addToTeam(req, res) {
   Pokemon.findById(req.params.id)
     .then(pokemon => {
-      PokemonTeam.find({trainer: req.user.profile._id})
-        .then(pokemonTeam => {
+      PokemonTeam.findByIdAndUpdate({names: req.params.id, trainer: req.user.profile._id})
+      .then(pokemonTeam => {
+          console.log('Yo', pokemonTeam);
           pokemonTeam.names.push(pokemon);
           pokemonTeam.save()
             .then(pokemon => {

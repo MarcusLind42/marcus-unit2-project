@@ -40,7 +40,7 @@ function show(req, res) {
 function createTeam(req, res) {
   PokemonTeam.create({trainer: req.user.profile._id})
     .then(pokemonteam => {
-      pokemoneam.save()
+      pokemonteam.save()
         .then(function() {
           res.redirect('/pokemon')
         })
