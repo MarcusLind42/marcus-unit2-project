@@ -1,5 +1,6 @@
 import { Profile } from '../models/profile.js'
 import { Pokemon } from '../models/pokemon.js'
+import { PokemonTeam } from '../models/pokemon-team.js'
 
 function index(req, res, next) {
   Profile.find({})
@@ -34,6 +35,7 @@ function show(req, res) {
     res.redirect("/")
   })
 }
+
 
 
 export {
