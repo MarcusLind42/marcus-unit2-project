@@ -42,7 +42,7 @@ function createTeam(req, res) {
     .then(pokemonTeam => {
       pokemonTeam.save()
         .then(function() {
-          res.redirect('/profiles/index')
+          res.redirect('/pokemon')
         })
     })
     .catch((err) => {
