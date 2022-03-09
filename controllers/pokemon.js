@@ -45,8 +45,11 @@ function addToTeam(req, res) {
                   })
                   profile.save()
                     .then(function() {
-                      res.redirect('/pokemon')
-                      pokemon 
+                      res.redirect('/pokemon', {
+                        pokemon,
+                        pokemonTeam
+                      })
+                      
                     })
                 })
             })
