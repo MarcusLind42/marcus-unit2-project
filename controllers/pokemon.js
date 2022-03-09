@@ -54,9 +54,14 @@ function addToTeam(req, res) {
     })
 }
 
+function createTeam(req, res) {
+
+}
+
 
 export {
   index,
   show,
-  addToTeam
+  addToTeam,
+  createTeam
 }

@@ -3,6 +3,8 @@ function passUserToView(req, res, next) {
   next()
 }
 
+function passProfileToView(req, res, next)
+
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next()
   res.redirect('/auth/google')
