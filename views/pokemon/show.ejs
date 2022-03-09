@@ -9,6 +9,9 @@
           <img src="<%= pokemon.sprite %>"><br>
           No. <%= pokemon.pokedexId %> 
           Name: <%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %>
+          <form action="/pokemon/<%= pokemon._id %>/addtoteam2" method="POST">
+            <button type="submit">Add to Team</button>
+          </form>
           <br>
           <% if (pokemon.type1.length > 1) { %>
             <%= pokemon.type1[0].toUpperCase() %><%= ` ` %> 

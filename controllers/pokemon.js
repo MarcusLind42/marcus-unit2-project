@@ -35,18 +35,14 @@ function addToTeam(req, res) {
     .then(pokemon => {
       PokemonTeam.findOne({trainer: req.user.profile._id})
         .then(pokemonTeam => {
-          console.log("Yo-dle", pokemon);
           pokemonTeam.names.push(pokemon);
           pokemonTeam.save()
             .then(pokemon => {
-              console.log('41', pokemon);
               Profile.findById(req.user.profile._id)
                 .then(profile => {
-                  console.log('Yo', pokemon);
                   pokemon.names.forEach(name => {
                     profile.team.push(name)
                   })
-                  // profile.team.push(pokemon.names)
                   profile.save()
                     .then(function() {
                       res.redirect('/pokemon')
@@ -57,9 +53,12 @@ function addToTeam(req, res) {
         })
         .catch(err => {
           console.log(err)
+          res.redirect('/pokemon')
         })
     })
 }
+
+
 
 export {
   index,
