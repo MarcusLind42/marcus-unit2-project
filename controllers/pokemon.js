@@ -55,7 +55,6 @@ function addToTeam(req, res) {
 }
 
 function createTeam(req, res) {
-
 }
 
 
