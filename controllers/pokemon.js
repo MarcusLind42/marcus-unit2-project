@@ -39,10 +39,14 @@ function addToTeam(req, res) {
           pokemonTeam.names.push(pokemon);
           pokemonTeam.save()
             .then(pokemon => {
+              console.log('41', pokemon);
               Profile.findById(req.user.profile._id)
                 .then(profile => {
                   console.log('Yo', pokemon);
-                  profile.team.push(pokemon)
+                  pokemon.names.forEach(name => {
+                    profile.team.push(name)
+                  })
+                  // profile.team.push(pokemon.names)
                   profile.save()
                     .then(function() {
                       res.redirect('/pokemon')
