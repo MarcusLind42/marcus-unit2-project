@@ -53,7 +53,6 @@ function createTeam(req, res) {
       res.redirect("/")
     })
 }
-
 function deleteFromTeam(req, res) {
   Profile.findById(req.user.profile._id)
     .then(profile => {
@@ -61,7 +60,7 @@ function deleteFromTeam(req, res) {
         Pokemon.findById(req.params.id)
           .then(pokemon => {
             console.log("findid", pokemon);
-            console.log("indexof", profile.team.indexOf(pokemon._id));
+
             const idx = profile.team.indexOf(pokemon._id)
             profile.team.splice(idx, 1)
             console.log(profile.team);
