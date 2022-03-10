@@ -63,7 +63,6 @@ function deleteFromTeam(req, res) {
 
             const idx = profile.team.indexOf(pokemon._id)
             profile.team.splice(idx, 1)
-            console.log(profile.team);
             profile.save()
               .then(() => {
                 res.redirect(`/profiles/${profile._id}`)
