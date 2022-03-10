@@ -21,7 +21,7 @@
           <%= pokemon.type1[0].toUpperCase() %>
         <% } %> 
         <br>
-        <% if (user.profile.team.includes(pokemon._id)) {%> 
+        <% if (user.profile) {%> 
 
         <% } else { %> 
           <form action="/pokemon/<%= pokemon._id %>/addtoteam" method="POST">

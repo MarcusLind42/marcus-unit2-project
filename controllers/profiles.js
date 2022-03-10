@@ -20,7 +20,6 @@ function show(req, res) {
 	Profile.findById(req.params.id)
 		.populate("team")
 		.exec((error, profile) => {
-      console.log('23', profile);
 			Profile.findById(req.user.profile._id)
 				.then(self => {
 				const isSelf = self._id.equals(profile._id);
@@ -56,12 +55,10 @@ function createTeam(req, res) {
 function deleteFromTeam(req, res) {
   Profile.findById(req.user.profile._id)
     .then(profile => {
-      console.log(profile);
         Pokemon.findById(req.params.id)
           .then(pokemon => {
-
-
             const idx = profile.team.indexOf(pokemon._id)
+            console.log('profile.team', profile.team);
             profile.team.splice(idx, 1)
             profile.save()
               .then(() => {
