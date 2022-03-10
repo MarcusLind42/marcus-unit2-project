@@ -59,7 +59,7 @@ function deleteFromTeam(req, res) {
       console.log(profile);
         Pokemon.findById(req.params.id)
           .then(pokemon => {
-            console.log("findid", pokemon);
+
 
             const idx = profile.team.indexOf(pokemon._id)
             profile.team.splice(idx, 1)
