@@ -18,10 +18,10 @@ function index(req, res, next) {
 
 function show(req, res) {
   Profile.findById(req.params.id)
-  .populate('team')
   .then((profile) => {
     console.log(profile);
     Profile.findById(req.user.profile._id)
+    .populate("team")
     .then(self => {
       const isSelf = self._id.equals(profile._id)
       res.render("profiles/show", {
