@@ -19,8 +19,8 @@ function index(req, res, next) {
 function show(req, res) {
 	Profile.findById(req.params.id)
 		.populate("team")
-		.then(profile => {
-      console.log(profile);
+		.exec((error, profile) => {
+      console.log('23', profile);
 			Profile.findById(req.user.profile._id)
 				.then(self => {
 				const isSelf = self._id.equals(profile._id);
@@ -32,10 +32,11 @@ function show(req, res) {
 				});
 			});
 		})
-		.catch(err => {
-			console.log(err);
-			res.redirect("/");
-		});
+		// .catch(err => {
+		// 	console.log(err);
+		// 	res.redirect("/");
+		// });
+
 }
 
 
