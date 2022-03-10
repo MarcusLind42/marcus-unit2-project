@@ -13,15 +13,13 @@
   <% } %>  
   <h1>It's <%= isSelf ? 'you' : profile.name %>!</h1>
   <% if (profile.team.length) { %>
-    <h2>Already got team </h2>
+
+    <h2>Already got team</h2>
+
   <% } else { %>
     <form action="/profiles/<%= profile._id %>/createteam" method="POST">
       <button type="submit">Create Team</button>
     </form>
     <% } %> 
-    <% profile.team.forEach(t => { %>
-     
-      <h2><%= t.name %> </h2>
-    <% }) %>
 
 <%- include('../partials/footer') %>
