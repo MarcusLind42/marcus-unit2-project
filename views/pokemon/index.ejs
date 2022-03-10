@@ -21,16 +21,17 @@
           <%= pokemon.type1[0].toUpperCase() %>
         <% } %> 
         <br>
-        <% if (user.profile) {%> 
+        <% if (profile.team.includes(pokemon._id)) {%> 
 
-        <% } else { %> 
-          <form action="/pokemon/<%= pokemon._id %>/addtoteam" method="POST">
-            <button type="submit">Add to Team</button>
-          </form>
-        <% } %> 
-      </li>
-    <% }) %>
-  </ul>
+          <% } else { %> 
+            <form action="/pokemon/<%= pokemon._id %>/addtoteam" method="POST">
+              <button type="submit">Add to Team</button>
+            </form>
+            <% } %> 
+          </li>
+          <% }) %>
+        </ul>
+        <%= console.log(profile.team);  %> 
 </section>  
 
 </main>

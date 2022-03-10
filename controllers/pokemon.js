@@ -5,10 +5,15 @@ import { PokemonTeam } from '../models/pokemon-team.js'
 function index(req, res) {
   Pokemon.find({})
     .then(pokemon => {
+        Profile.findById(req.user.profile.id)
+        .then(profile => {
+        
       res.render('pokemon/index', {
+        profile,
         pokemon,
         title: 'All Pokemon'
       })
+    })
     }) 
     .catch(err => {
       console.log(err)
