@@ -40,9 +40,12 @@
           <br>
           <%= team.description %>
         </li>
+        <% if (isSelf) { %> 
         <form action="/profiles/<%= team._id %>?_method=DELETE" method="POST">
           <button class="btn" type="submit">Remove from team</button>
         </form>
+        <% } else { %> 
+          <% } %> 
       <% }) %>
     </ul>
   </section>
