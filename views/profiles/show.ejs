@@ -18,7 +18,6 @@
     </form>
     <% } else { %>
   <% } %> 
-
   <h3>Your team:</h3>
   <section>
     <ul>
@@ -27,7 +26,9 @@
           <img src="<%= team.sprite %>"><br>
           No. <%= team.pokedexId %> 
           Name: <%= team.name[0].toUpperCase() + team.name.substring(1) %>
-  
+          <form action="/profiles/<%= team._id %>?_method=DELETE" method="POST">
+            <button class="btn" type="submit">Remove from team</button>
+          </form>
           <br>
           <% if (team.type1.length > 1) { %>
             <%= team.type1[0].toUpperCase() %><%= ` ` %>   

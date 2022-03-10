@@ -54,9 +54,28 @@ function createTeam(req, res) {
     })
 }
 
+function deleteFromTeam(req, res) {
+  Profile.findById(req.user.profile._id)
+    .then(profile => {
+      console.log(profile);
+        Pokemon.findById(req.params.id)
+          .then(pokemon => {
+            console.log("findid", pokemon);
+            console.log("indexof", profile.team.indexOf(pokemon._id));
+            const idx = profile.team.indexOf(pokemon._id)
+            profile.team.splice(idx, 1)
+            console.log(profile.team);
+            profile.save()
+              .then(() => {
+                res.redirect(`/profiles/${profile._id}`)
+          })
+        })
+    })
+}
 
 export {
   index,
   show,
   createTeam,
+  deleteFromTeam as delete,
 }
