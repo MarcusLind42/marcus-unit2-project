@@ -3,8 +3,6 @@
 
 <main>
   <h1>PokeDex</h1>
-  
-  
 <section>
   <ul>
     <% pokemon.forEach(pokemon => { %>
@@ -22,12 +20,11 @@
         <% } %> 
         <br>
         <% if (profile.team.includes(pokemon._id)) {%> 
-
-          <% } else { %> 
+        <% } else { %> 
             <form action="/pokemon/<%= pokemon._id %>/addtoteam" method="POST">
               <button type="submit">Add to Team</button>
             </form>
-            <% } %> 
+        <% } %> 
           </li>
           <% }) %>
         </ul>
