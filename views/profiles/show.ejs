@@ -26,6 +26,8 @@
     </form>
   <% } else { %>
   <% } %> 
+
+  <% if (profile.team.length) {%> 
 <main>
   <main class="bg-primary">
     <div class="container py-4 px-3">
@@ -68,5 +70,8 @@
     </div>
   </div>
 </main>
+<% } else { %>
+  
+  <% } %> 
 
 <%- include('../partials/footer') %>
