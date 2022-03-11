@@ -6,19 +6,18 @@ function index(req, res) {
   Pokemon.find({})
     .then(pokemon => {
         Profile.findById(req.user.profile.id)
-        .then(profile => {
-        
-      res.render('pokemon/index', {
-        profile,
-        pokemon,
-        title: 'All Pokemon'
-      })
-    })
-    }) 
+          .then(profile => {
+            res.render('pokemon/index', {
+              profile,
+              pokemon,
+              title: 'All Pokemon'
+            })
+          })
+        }) 
     .catch(err => {
       console.log(err)
       res.redirect('/pokemon')
-    })
+  })
 }
 
 function show(req, res) {
@@ -54,12 +53,12 @@ function addToTeam(req, res) {
                     })
                 })
             })
-        })
-        .catch(err => {
+          })
+      .catch(err => {
           console.log(err)
           res.redirect('/pokemon')
-        })
     })
+  })
 }
 
 

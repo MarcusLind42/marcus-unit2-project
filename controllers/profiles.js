@@ -31,11 +31,10 @@ function show(req, res) {
 				});
 			});
 		})
-		// .catch(err => {
-		// 	console.log(err);
-		// 	res.redirect("/");
-		// });
-
+		.catch(err => {
+			console.log(err);
+			res.redirect("/");
+	});
 }
 
 
@@ -46,11 +45,11 @@ function createTeam(req, res) {
         .then(function() {
           res.redirect('/pokemon')
         })
-    })
+      })
     .catch((err) => {
       console.log(err)
       res.redirect("/")
-    })
+  })
 }
 function deleteFromTeam(req, res) {
   Profile.findById(req.user.profile._id)

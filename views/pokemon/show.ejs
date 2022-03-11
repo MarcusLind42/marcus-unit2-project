@@ -10,7 +10,6 @@
 <%- include('../partials/nav') %>
 
 <main>
-
 <main class="bg-primary">
   <div class="container py-4 px-3">
     <div 
@@ -25,17 +24,18 @@
                   alt="<%= pokemon.name %>"
                   width="100%"
                 />
-              <div class="card-body bg-light">
-                <p class="card-title fs-1 text-dark"><%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %></p>
-                <p class="card-title fs-3 text-muted  "><% if (pokemon.type1.length > 1) { %>
-                  <%= pokemon.type1[0].toUpperCase() %><%= ` ` %>   
-                  <%= pokemon.type1[1].toUpperCase() %>  
-                <% } else { %>
-                  <%= pokemon.type1[0].toUpperCase() %>
-                <% } %></p>
-                <p class="fs-2">
-                Height: <%= pokemon.height/10 %>m
-                Weight: <%= pokemon.weight/10 %>kg 
+                <div class="card-body bg-light">
+                  <p class="card-title fs-1 text-dark"><%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %></p>
+                  <p class="card-title fs-3 text-muted  ">
+                  <% if (pokemon.type1.length > 1) { %>
+                    <%= pokemon.type1[0].toUpperCase() %><%= ` ` %>   
+                    <%= pokemon.type1[1].toUpperCase() %>  
+                  <% } else { %>
+                    <%= pokemon.type1[0].toUpperCase() %>
+                  <% } %></p>
+                  <p class="fs-2">
+                    Height: <%= pokemon.height/10 %>m
+                    Weight: <%= pokemon.weight/10 %>kg 
                 <br><%= pokemon.description %><br> </p>
               </div>
             </div>
