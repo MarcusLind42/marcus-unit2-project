@@ -38,6 +38,7 @@
 - Express
 - Node.js
 - Passport
+- Google OAuth
 - Heroku
 - [PokeAPI](https://pokeapi.co/)
   
