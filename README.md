@@ -29,6 +29,7 @@
 - CSS
 - Bootstrap 5
 - MongoDB
+- Mongoose
 - Express
 - Node.js
 - Passport
