@@ -10,6 +10,9 @@
 5. Look at other peoples teams by clicking on their picture in profiles!
 
 
+### ERD
+![ERD](https://i.imgur.com/pCgpIOc.png)
+
 ### Create team
 
 ![create team](https://i.imgur.com/6MYcSZP.png)
