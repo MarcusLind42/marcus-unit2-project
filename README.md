@@ -10,17 +10,17 @@
 5. Look at other peoples teams by clicking on their picture in profiles!
 
 
-**Create team**
+### Create team
 
 ![create team](https://i.imgur.com/6MYcSZP.png)
 
-**PokeDex**
+### PokeDex
 ![PokeDex](https://i.imgur.com/B7AH660.png)
 
-**Pokemon Details**
+### Pokemon Details
 ![Pokemon Details](https://i.imgur.com/odOGU0e.png)
 
-**Your team**
+### Your team
 ![Your team](https://i.imgur.com/bEkiGER.png)
 
 ## Tech Stack
