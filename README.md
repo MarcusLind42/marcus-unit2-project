@@ -39,6 +39,7 @@
 - Node.js
 - Passport
 - Heroku
+- [PokeAPI](https://pokeapi.co/)
   
 
 ## Next Steps
