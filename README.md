@@ -2,6 +2,8 @@
 
 ## [Click here to build your pokemon team!](https://marcus-unit2-project.herokuapp.com/)
 
+## [Trello!](https://trello.com/b/dyrWBHVr/marcus-project)
+
 ## Instructions
 1. Sign in using Google
 2. Click on profiles, go to your profile, then click create team
