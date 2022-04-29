@@ -1,17 +1,17 @@
-<%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
+<%- include('./partials/html-head') %> <%- include('./partials/nav') %>
 
 <main>
-  <h1>Hello, <%= user ? `Trainer ${user.profile.name}!` : "Pokemon Trainer!" %></h1>
+  <h1>
+    Hello, <%= user ? `Trainer ${user.profile.name}!` : "Pokemon Trainer! Sign in with google to get started." %>
+  </h1>
   <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
+  <div>
+    <img
+      src="<%= user.profile.avatar %>"
+      alt="<%= user.profile.name %> avatar"
+    />
+  </div>
   <% } %>
-    
 </main>
 
 <%- include('./partials/footer') %>

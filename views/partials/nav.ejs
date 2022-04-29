@@ -4,9 +4,9 @@
 </head>
 <body>
   <nav>
+    <% if (user) { %>
     <a href="/pokemon">Pokemon</a>
     <a href="/profiles">All Profiles</a>
-    <% if (user) { %>
       <a href="/profiles">Your Profile</a>
       <a class="nav" href="/auth/logout">
         Logout
