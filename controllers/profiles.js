@@ -37,6 +37,12 @@ function show(req, res) {
   })
 }
 
+function showSelf(req, res) {
+  Profile.findById(req.params.id)
+  .populate('team')
+
+}
+
 function createTeam(req, res) {
   PokemonTeam.create({trainer: req.user.profile._id})
     .then(pokemonteam => {
@@ -71,4 +77,5 @@ export {
   show,
   createTeam,
   deleteFromTeam as delete,
+  showSelf,
 }
