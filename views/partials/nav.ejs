@@ -7,7 +7,7 @@
     <% if (user) { %>
     <li><a href="/pokemon">PokeDex</a></li>
     <li><a href="/profiles">All Profiles</a></li>
-      <li><a href="/profiles">Your Profile</a></li>
+      <li><a href="/profiles/<%= user.profile._id %>">Your Profile</a></li>
       <li><a class="nav" href="/auth/logout">
         Logout
       </a></li>
