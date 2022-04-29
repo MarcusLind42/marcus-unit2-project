@@ -17,24 +17,24 @@ function index(req, res, next) {
 }
 
 function show(req, res) {
-	Profile.findById(req.params.id)
-		.populate("team")
-		.exec((error, profile) => {
-			Profile.findById(req.user.profile._id)
-				.then(self => {
-				const isSelf = self._id.equals(profile._id);
-				res.render("profiles/show", {
-					title: `${profile.name}'s profile`,
-					profile,
-					self,
-					isSelf,
-				});
-			});
-		})
-		.catch(err => {
-			console.log(err);
-			res.redirect("/");
-	});
+  Profile.findById(req.params.id)
+  .populate('team')
+  .then((profile) => {
+    Profile.findById(req.user.profile._id)
+    .then(self => {
+      const isSelf = self._id.equals(profile._id)
+      res.render("profiles/show", {
+        title: `${profile.name}'s profile`,
+        profile,
+        self,
+        isSelf,
+      })
+    })
+  })
+  .catch((err) => {
+    console.log(err)
+    res.redirect("/")
+  })
 }
 
 
