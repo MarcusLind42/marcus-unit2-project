@@ -19,7 +19,7 @@
     />
   </div>
   <% } %>
-  <h1>It's <%= isSelf ? 'you' : profile.name %>!</h1>
+  <h1><%= isSelf ? 'Your Team' : `${profile.name}'\s Team` %></h1>
   <% if ((isSelf) && (!profile.team.length)) { %>
   <form action="/profiles/<%= profile._id %>/createteam" method="POST">
     <button type="submit">Create Team</button>
